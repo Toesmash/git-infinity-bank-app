@@ -6,7 +6,7 @@ import AccountListItem from './AccountListItem';
 const AccountList = (props) => {
    return (
       <div>
-         <h2>Zoznam uctov</h2>
+         <h1>--------------------------------------</h1>
          {
             props.accounts.length === 0 ? (<p>No accounts</p>) :
                (

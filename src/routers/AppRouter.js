@@ -9,7 +9,8 @@ import DashboardPage from '../components/DashboardPage';
 import LoginPage from '../components/LoginPage';
 import NotFoundPage from '../components/NotFoundPage';
 import PaymentsPage from '../components/PaymentsPage';
-import PaymentsSepaPage from '../components/PaymentsSepaPage';
+import AddSepaPayment from '../components/AddSepaPayment';
+import EditSepaPayment from '../components/EditSepaPayment';
 import PaymentsIntrPage from '../components/PaymentsIntrPage';
 import PaymentsAcctrPage from '../components/PaymentsAcctrPage';
 import RegisterPage from '../components/RegisterPage';
@@ -27,8 +28,9 @@ const AppRouter = () => (
             <PublicRoute path='/register' component={RegisterPage} exact={true} />
             <PrivateRoute path='/dashboard' component={DashboardPage} />
             <PrivateRoute path='/payments' component={PaymentsPage} exact={true} />
-            <PrivateRoute path='/payments/sepa' component={PaymentsSepaPage} />
-            <PrivateRoute path='/payments/intr' component={PaymentsIntrPage} exact={true} />
+            <PrivateRoute path='/payments/sepa' component={AddSepaPayment} exact={true} />
+            <PrivateRoute path='/payments/sepa/:iban/:id' component={EditSepaPayment} />
+            <PrivateRoute path='/payments/intr' component={PaymentsIntrPage} />
             <PrivateRoute path='/payments/acctr' component={PaymentsAcctrPage} />
             <PrivateRoute path='/accounts' component={AccountsPage} />
             <PrivateRoute path='/cards' component={CardsPage} />

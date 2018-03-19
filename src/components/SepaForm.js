@@ -7,14 +7,14 @@ class SepaForm extends React.Component {
    constructor(props) {
       super(props);
       this.state = {
-         ibanFrom: props.sepa ? props.sepa.ibanFrom : '',
+         ibanFrom: props.sepa ? props.sepa.ibanFrom : 'Zvolte si ucet',
          ibanTo: props.sepa ? props.sepa.ibanTo : '',
          amount: props.sepa ? props.sepa.amount : '',
          varSymbol: props.sepa ? props.sepa.varSymbol : '',
          specSymbol: props.sepa ? props.sepa.specSymbol : '',
          constSymbol: props.sepa ? props.sepa.constSymbol : '',
          paymentDate: props.sepa ? moment(props.sepa.paymentDate) : moment(),
-         expressChecked: false,
+         expressChecked: props.sepa ? props.sepa.expressChecked : false,
          calendarFocused: false,
          note: '',
          error: ''
@@ -30,6 +30,7 @@ class SepaForm extends React.Component {
       else {
          this.setState(() => ({ error: '' }));
          this.props.onSubmit({
+            type: 'sepa',
             ibanFrom: this.state.ibanFrom,
             ibanTo: this.state.ibanTo,
             amount: parseFloat(this.state.amount, 10) * 100,
@@ -104,7 +105,7 @@ class SepaForm extends React.Component {
             <select
                onChange={this.onIbanFromChange}
             >
-               <option key='0' defaultValue={true} hidden >Vyber si ucet</option>
+               <option key='0' defaultValue hidden>{this.state.ibanFrom}</option>
                {
                   this.props.accounts.map((item, index) => {
                      return (
@@ -151,8 +152,10 @@ class SepaForm extends React.Component {
                   onChange={this.toggleExpress}
                />
             </label>
-
-            <button>Posli platbu</button>
+            {
+               this.props.sepa ? <button>Zmen platbu</button> : <button>Posli platbu</button>
+            }
+            
          </form>
       )
    }
