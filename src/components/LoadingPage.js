@@ -2,7 +2,7 @@ import React from 'react';
 
 const LoadingPage = () => (
    <div>
-      <h1>LOADING!!!</h1>
+      <h1>Nacitavanie....</h1>
    </div>
 )
 

@@ -16,13 +16,13 @@ const LoginPage = (props) => {
    return (
       <div>
          <form onSubmit={handleSignIn}>
-            <h3>Sign in</h3>
+            <h3>Prihlaste sa</h3>
             <input
                autoFocus
                type="text"
-               placeholder="Enter your identification number"
+               placeholder="Zadajte identifikacne cislo"
             />
-            <input type="password" placeholder="enter password" />
+            <input type="password" placeholder="Zadajte heslo" />
             <input type="submit" value="Login" />
          </form>
       </div>

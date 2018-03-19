@@ -6,7 +6,7 @@ export const login = (uid) => ({
 });
 
 export const startLogin = (email, password) => {
-   console.log(email, password);
+   // console.log(email, password);
    return () => {
       firebase.auth().signInWithEmailAndPassword(email, password).catch((err) => {
          console.log("ERROR: ", err);

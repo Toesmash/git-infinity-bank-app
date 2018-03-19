@@ -9,6 +9,9 @@ import DashboardPage from '../components/DashboardPage';
 import LoginPage from '../components/LoginPage';
 import NotFoundPage from '../components/NotFoundPage';
 import PaymentsPage from '../components/PaymentsPage';
+import PaymentsSepaPage from '../components/PaymentsSepaPage';
+import PaymentsIntrPage from '../components/PaymentsIntrPage';
+import PaymentsAcctrPage from '../components/PaymentsAcctrPage';
 import RegisterPage from '../components/RegisterPage';
 // Routes
 import PublicRoute from './PublicRoute';
@@ -23,7 +26,10 @@ const AppRouter = () => (
             <PublicRoute path='/login' component={LoginPage} />
             <PublicRoute path='/register' component={RegisterPage} exact={true} />
             <PrivateRoute path='/dashboard' component={DashboardPage} />
-            <PrivateRoute path='/payments' component={PaymentsPage} />
+            <PrivateRoute path='/payments' component={PaymentsPage} exact={true} />
+            <PrivateRoute path='/payments/sepa' component={PaymentsSepaPage} />
+            <PrivateRoute path='/payments/intr' component={PaymentsIntrPage} exact={true} />
+            <PrivateRoute path='/payments/acctr' component={PaymentsAcctrPage} />
             <PrivateRoute path='/accounts' component={AccountsPage} />
             <PrivateRoute path='/cards' component={CardsPage} />
             <Route component={NotFoundPage} />

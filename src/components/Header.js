@@ -4,14 +4,15 @@ import { startLogout } from '../actions/authActions';
 
 const Header = (props) => {
    return (
-      <div>
+      <header>
+         <h2>INFINITYbank</h2>
          <button onClick={props.startLogout}>Logout</button>
-      </div>
+      </header>
    );
 };
 
 const mapDispatchToProps = (dispatch) => ({
-   startLogout: () => dispatch(startLogout())
+   startLogout: () => dispatch(startLogout()),
 });
 
 export default connect(undefined, mapDispatchToProps)(Header);
