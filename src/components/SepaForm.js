@@ -9,7 +9,7 @@ class SepaForm extends React.Component {
       this.state = {
          ibanFrom: props.sepa ? props.sepa.ibanFrom : 'Zvolte si ucet',
          ibanTo: props.sepa ? props.sepa.ibanTo : '',
-         amount: props.sepa ? props.sepa.amount : '',
+         amount: props.sepa ? (props.sepa.amount / 100).toString() : '',
          varSymbol: props.sepa ? props.sepa.varSymbol : '',
          specSymbol: props.sepa ? props.sepa.specSymbol : '',
          constSymbol: props.sepa ? props.sepa.constSymbol : '',
@@ -31,6 +31,7 @@ class SepaForm extends React.Component {
          this.setState(() => ({ error: '' }));
          this.props.onSubmit({
             type: 'sepa',
+            transaction: 'debit',
             ibanFrom: this.state.ibanFrom,
             ibanTo: this.state.ibanTo,
             amount: parseFloat(this.state.amount, 10) * 100,
@@ -114,7 +115,7 @@ class SepaForm extends React.Component {
                   })
                }
             </select>
-            <input type='text' placeholder='IBAN prijemcy'
+            <input type='text' placeholder='IBAN prijemcu'
                value={this.state.ibanTo}
                onChange={this.onIbanToChange}
             />

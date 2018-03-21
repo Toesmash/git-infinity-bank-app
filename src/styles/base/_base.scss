@@ -1,27 +1,40 @@
-// * {
-//    box-sizing: border-box;
-// }
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono');
 
-// html {
-//    font-size: 62.5%;
-// }
 
-// body {
-//    font-family: Helvetica, Arial, sans-serif;
-//    font-size: $m-size;
-//    color: $dark-grey;
-//    line-height: 1.6;
-//    color: red;
-// }
+* {
+   box-sizing: border-box;
+}
 
-// button {
-//    cursor: pointer;
-// }
+html {
+   font-size: 62.5%;
+   overflow-y: scroll; 
+}
 
-// button:disabled {
-//    cursor: default;
-// }
+body {
+   color: $off-black;
+   font-family: 'Raleway', Helvetica, sasns-serif;
+   font-size: $m-size;
+   line-height: 1.6;
+ }
 
-// .is-active {
-//    font-weight: bold;
-// }
+ h1, h2, h3, h4, .iban {
+  letter-spacing: 1.5;
+ }
+
+button {
+   cursor: pointer;
+}
+
+button:disabled {
+   cursor: default;
+}
+
+.is-active {
+   font-weight: bold;
+}
+
+
+.iban {
+  font-family: 'IBM Plex Mono', monospace;
+}

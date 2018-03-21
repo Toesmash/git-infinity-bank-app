@@ -1,0 +1,55 @@
+.account-list {
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-between;
+}
+
+.account-container {
+   border-bottom: 3px solid darken($main-color, 10%);
+   border-radius: 3px;
+   line-height: 1;
+   background: $main-color;
+   margin: $s-size $s-size 0 0;
+   width: 42rem;
+   height: 10rem;
+
+}
+
+
+.account-item {
+   color: whitesmoke;
+   display: flex;
+   justify-content: space-between;
+   text-decoration: none;
+   padding: $s-size;
+
+   h3 {
+      margin: 0;
+   }
+
+   span {
+      font-weight: 400;
+   }
+   .iban {
+      font-size: 1.3rem;
+      line-height: 0.5;
+   }
+   .type {
+      font-size: 1.3rem;
+      line-height: 0.5;
+   }
+}
+
+
+// SK0514532247344570992422
+// SK3169797688986015031531
+// SK9311680945756314385863
+// SK8409127701438846964488
+// SK5728257488384674970295
+// SK7144928094228828748295
+// SK8504669745259565676421
+// SK1435776001581184540600
+// SK9664193264466401290920
+// SK4599653541456626265316
+
+// SK10 7777 0000 0012 3456 7890

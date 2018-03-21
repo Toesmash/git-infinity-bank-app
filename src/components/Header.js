@@ -4,9 +4,13 @@ import { startLogout } from '../actions/authActions';
 
 const Header = (props) => {
    return (
-      <header>
-         <h2>INFINITYbank</h2>
-         <button onClick={props.startLogout}>Logout</button>
+      <header className='header'>
+         <div className='content-container'>
+            <div className='header__content'>
+               <h1 className='header__title'>INFINITY<span>bank</span></h1>
+               <button className='button button--link' onClick={props.startLogout}>Logout</button>
+            </div>
+         </div>
       </header>
    );
 };

@@ -1,0 +1,7 @@
+.list-header {
+   display: flex;
+   justify-content: space-between;
+   align-content: center;
+   padding: $s-size;
+   border: 1px solid darken(white, 15);
+}

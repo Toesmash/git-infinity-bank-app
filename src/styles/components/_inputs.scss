@@ -1,0 +1,12 @@
+.text-input {
+   border: 1px solid #cacccd;
+   height: 50px;
+   font-weight: 300;
+   flex-grow: 2;
+   margin-right: $s-size;
+}
+
+.select {
+   @extend .text-input;
+   flex-grow: 0;
+}

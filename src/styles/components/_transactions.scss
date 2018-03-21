@@ -1,0 +1,40 @@
+.transaction-list {
+   // display: flex;
+   // flex-flow: row wrap;
+   // justify-content: space-between;
+}
+
+.transaction-list__header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-top: 1px solid darken(white, 15);
+   margin-top: $xl-size;
+   align-items: center;
+
+   span {
+      font-size: 1.5rem;
+   }
+}
+
+.transaction-item {
+   text-decoration: none;
+   color: $off-black;
+}
+
+.transaction-item__details {
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+   align-items: center;
+   text-align: center;
+
+   .iban {
+      font-size: 1.2rem;
+   }
+}
+
+
+.transaction-item__details--flex {
+   // border: 1px solid green;
+}

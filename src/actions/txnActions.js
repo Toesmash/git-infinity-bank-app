@@ -11,11 +11,13 @@ export const addTransaction = (txn) => ({
 });
 
 
-export const startAddTransaction = (transaction) => {
+export const startAddTransaction = (txnData) => {
    return (dispatch, getState) => {
       const uid = getState().auth.uid;
+
       const {
          type = '',
+         transaction = '',
          ibanFrom = '',
          ibanTo = '',
          amount = 0,
@@ -23,12 +25,13 @@ export const startAddTransaction = (transaction) => {
          specSymbol = '',
          constSymbol = '',
          paymentDate = 0,
-         expressChecked = undefined,
+         expressChecked = false,
          note = ''
-      } = transaction;
+      } = txnData;
 
       const payment = {
          type: type,
+         transaction: transaction,
          ibanFrom: ibanFrom,
          ibanTo: ibanTo,
          amount: amount,

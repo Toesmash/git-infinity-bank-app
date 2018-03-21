@@ -5,8 +5,7 @@ import AccountListItem from './AccountListItem';
 
 const AccountList = (props) => {
    return (
-      <div>
-         <h1>--------------------------------------</h1>
+      <div className='account-list'>
          {
             props.accounts.length === 0 ? (<p>No accounts</p>) :
                (
