@@ -8,7 +8,7 @@ const Header = (props) => {
          <div className='content-container'>
             <div className='header__content'>
                <h1 className='header__title'>INFINITY<span>bank</span></h1>
-               <button className='button button--link' onClick={props.startLogout}>Logout</button>
+               <button className='button button--logout' onClick={props.startLogout}>Logout</button>
             </div>
          </div>
       </header>

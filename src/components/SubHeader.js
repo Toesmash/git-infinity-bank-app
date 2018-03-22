@@ -9,9 +9,9 @@ const SubHeader = () => (
                <NavLink to='/payments' className='subheader__leftmenu'>PLATBY</NavLink>
             </div>
             <div className='subheader__rightmenu'>
-               <NavLink to='/dashboard' className='subheader__rightmenu'>Dashboard</NavLink>
-               <NavLink to='/accounts' className='subheader__rightmenu'>Účty</NavLink>
-               <NavLink to='/cards' className='subheader__rightmenu'>Karty</NavLink>
+               <NavLink to='/dashboard' activeClassName='is-active' className='subheader__rightmenu'>Dashboard</NavLink>
+               <NavLink to='/accounts' activeClassName='is-active' className='subheader__rightmenu'>Účty</NavLink>
+               <NavLink to='/cards' activeClassName='is-active' className='subheader__rightmenu'>Karty</NavLink>
             </div>
          </div>
       </div>

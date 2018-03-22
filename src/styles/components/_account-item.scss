@@ -10,8 +10,7 @@
    line-height: 1;
    background: $main-color;
    margin: $s-size $s-size 0 0;
-   width: 42rem;
-   height: 10rem;
+   width: 45rem;
 
 }
 
@@ -22,6 +21,7 @@
    justify-content: space-between;
    text-decoration: none;
    padding: $s-size;
+   height: 15rem;
 
    h3 {
       margin: 0;
@@ -37,6 +37,9 @@
    .type {
       font-size: 1.3rem;
       line-height: 0.5;
+   }
+   &:active {
+      color: lightgrey;
    }
 }
 

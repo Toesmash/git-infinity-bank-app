@@ -13,19 +13,35 @@ const LoginPage = (props) => {
       props.startLogin(email, password);
    }
 
+   // export const LoginPage = (props) => (
+   //    <div className='box-layout'>
+   //       <div className='box-layout__box'>
+   //          <h1 className='box-layout__title'>Expensify App</h1>
+   //          <p>It's time to get your expenses under control.</p>
+   //          <button className='button' onClick={props.startLogin}>Login with Google</button>
+   //       </div>
+   //    </div>
+   // );
+
+
+
    return (
-      <div>
-         <form onSubmit={handleSignIn}>
-            <h3>Prihlaste sa</h3>
-            <input
-               autoFocus
-               type="text"
-               placeholder="Zadajte identifikacne cislo"
-            />
-            <input type="password" placeholder="Zadajte heslo" />
-            <input type="submit" value="Login" />
-         </form>
+      <div className='box-layout'>
+         <div className='box-layout__box'>
+            <form onSubmit={handleSignIn}>
+               <h3>Vitajte v INFINITYbank</h3>
+               <input
+                  autoFocus
+                  type="text"
+                  placeholder="Zadajte identifikacne cislo"
+               />
+               <input type="password" placeholder="Zadajte heslo" />
+               <input type="number" placeholder="Zadajte overovaci PIN" />
+               <button className='button'>Prihláste sa</button>
+            </form>
+         </div>
       </div>
+
    );
 
 

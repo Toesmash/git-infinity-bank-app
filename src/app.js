@@ -19,6 +19,7 @@ import './styles/styles.scss';
 
 
 const reduxStore = configureStore();
+console.log(reduxStore);
 let hasRendered = false;
 const app = (
    <Provider store={reduxStore}>
@@ -42,22 +43,15 @@ const renderApp = () => {
 // })
 
 
-// database.ref('/accounts').set({
-//    iban: 'SK6554721520884974556992'
-// }).then(() => {
-//    console.log('Data is saved');
-// }).catch((error) => {
-//    console.log('This failed', error);
-// });
-
-
 ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 firebase.auth().onAuthStateChanged((user) => {
    if (user) {
       reduxStore.dispatch(login(user.uid));
       reduxStore.dispatch(startSetData()).then(()=>{
+         console.log('rendering');
          renderApp();
+         
       });
    }
    else {

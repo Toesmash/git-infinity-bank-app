@@ -1,7 +1,7 @@
 import moment from 'moment';
 
 
-const getAccountTransactions = (transactions, { startDate, endDate, credit, debit, sortBy, text, value, limits }) => {
+const getAccountTransactions = (transactions, { startDate, endDate, credit, debit, sortBy, text, }) => {
 
    return transactions.filter((item) => {
       let txnAmount = item.amount / 100;
@@ -13,10 +13,10 @@ const getAccountTransactions = (transactions, { startDate, endDate, credit, debi
       const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment, 'day') : true;
       const endDateMatch = endDate ? endDate.isSameOrAfter(createdAtMoment, 'day') : true;
       const textMatch = ((item.ibanFrom.toLowerCase()).includes(text.toLowerCase())) || ((item.note.toLowerCase()).includes(text.toLowerCase()));
-      const minLimit = value.min ? (txnAmount) >= value.min : true;
-      const maxLimit = value.max ? (txnAmount) <= value.max : true;
+      // const minLimit = value.min ? (txnAmount) >= value.min : true;
+      // const maxLimit = value.max ? (txnAmount) <= value.max : true;
 
-      return startDateMatch && endDateMatch && textMatch && minLimit && maxLimit;
+      return startDateMatch && endDateMatch && textMatch;
    }).sort((a, b) => {
       if (sortBy === 'date') {
          return a.paymentDate < b.paymentDate ? 1 : -1;
